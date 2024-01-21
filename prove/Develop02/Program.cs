@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.Design;
+using System.IO;
+using System.IO.Enumeration;
 
 class Program
 {
@@ -50,11 +52,19 @@ class Program
             }
             else if (userSelection == "3") // if the user wants to load from a file
             {
+                Console.WriteLine("What is the filename?");
+                Console.Write("> ");
+                string file = Console.ReadLine();
 
+                journal.LoadFromFile(file);
             }
             else if (userSelection == "4") // if the user wants to save to a file
             {
+                Console.WriteLine("What is the filename?");
+                Console.Write("> ");
+                string file = Console.ReadLine();
 
+                journal.SaveToFile(file);
             }
         }
     }
