@@ -24,7 +24,7 @@ public class PromptGenerator
 
     public string GetRandomPrompt() // method that gets a random prompt from the list of prompts
     {
-        // this method was taken from tutorialspoint.com
+        // the syntax used in this method was taken from tutorialspoint.com
         Random random = new Random();
         int index = random.Next(_prompts.Count);
         string randomPrompt = _prompts[index];

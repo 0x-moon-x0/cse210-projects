@@ -7,13 +7,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        // instantinating a journal and a prompt generator
+        // instantinating a journal and random generators
         Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
+        QuoteGenerator quoteGenerator = new QuoteGenerator();
 
-        // welcome message
+        // welcome message with a random daily quote
         Console.WriteLine();
         Console.WriteLine("Welcome to the Journal Program!");
+        Console.WriteLine();
+        Console.WriteLine("Here is your daily quote:");
+        string quote = quoteGenerator.GetRandomQuote();
+        Console.WriteLine(quote);
 
         string userSelection = "";
 
