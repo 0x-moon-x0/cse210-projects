@@ -1,5 +1,8 @@
 using System;
 
+// exceeded the requirements by accounting for invalid input in the menu and adding an extra step to the
+// breathing activity (holding breath for 7 seconds, as according to the 4-7-8 breathing principle)
+
 class Program
 {
     static void Main(string[] args)
