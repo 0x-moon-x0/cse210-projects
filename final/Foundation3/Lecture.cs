@@ -16,6 +16,6 @@ public class Lecture : Event
 
     public override string GetShortDescription()
     {
-        return $"Lecture: {_title} on {_date}";
+        return $"Lecture: {GetTitle()} on {GetDate()}";
     }
 }

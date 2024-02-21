@@ -1,8 +1,8 @@
 public abstract class Event
 {
-    protected string _title;
+    private string _title;
     private string _description;
-    protected string _date;
+    private string _date;
     private string _time;
     private Address _address;
 
@@ -23,4 +23,14 @@ public abstract class Event
     public abstract string GetFullDetails();
 
     public abstract string GetShortDescription();
+
+    public string GetTitle()
+    {
+        return _title;
+    }
+
+    public string GetDate()
+    {
+        return _date;
+    }
 }
