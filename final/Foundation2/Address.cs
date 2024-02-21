@@ -26,7 +26,7 @@ public class Address
         }
     }
 
-    public string AddressString()
+    public string ConvertToString()
     {
         return $"{_street}\n{_city}, {_state}, {_country}";
     }

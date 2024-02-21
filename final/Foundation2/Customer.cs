@@ -21,6 +21,6 @@ public class Customer
 
     public string GetAddress()
     {
-        return _address.AddressString();
+        return _address.ConvertToString();
     }
 }
