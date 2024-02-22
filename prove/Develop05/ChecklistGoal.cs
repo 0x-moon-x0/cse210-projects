@@ -18,7 +18,16 @@ public class ChecklistGoal : Goal
 
         if (_amountCompleted == _target)
         {
-            Console.WriteLine($"Congrats! You get a bonus {_bonus} points for completing this task!");
+            ShowConfetti(3);
+            Console.WriteLine();
+
+            DisplayCongratulations();
+
+            Console.WriteLine();
+            ShowConfetti(3);
+
+            Console.WriteLine();
+            Console.WriteLine($"You get a bonus {_bonus} points for completing this task!");
         }
     }
 
@@ -43,5 +52,44 @@ public class ChecklistGoal : Goal
     public override string GetStringRepresentation()
     {
         return $"ChecklistGoal|~|{GetName()}|~|{GetDescription()}|~|{GetPoints()}|~|{_bonus}|~|{_target}|~|{_amountCompleted}";
+    }
+
+    public void DisplayCongratulations()
+    {
+        List<string> ascii = new List<string>
+        {
+            "  ____                 _       _       _     _ ",
+            " / ___| ___   ___   __| |     | | ___ | |__ | |",
+            "| |  _ / _ \\ / _ \\ / _` |  _  | |/ _ \\| '_ \\| |",
+            "| |_| | (_) | (_) | (_| | | |_| | (_) | |_) |_|",
+            " \\____|\\___/ \\___/ \\__,_|  \\___/ \\___/|_.__/(_)",
+        };
+        
+        foreach (string a in ascii)
+        {
+            Console.WriteLine(a);
+        }
+    }
+
+    public void ShowConfetti(int seconds)
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+
+        while (DateTime.Now < endTime)
+        {
+            List<string> animationStrings = new List<string>
+            {
+                "*     .       *       .       *       .     *",
+                ".     *       .       *       .       *     ."
+            };
+
+            foreach (string s in animationStrings)
+            {
+                Console.Write(s);
+                Thread.Sleep(500);
+                Console.Write("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+            }
+        }
     }
 }
