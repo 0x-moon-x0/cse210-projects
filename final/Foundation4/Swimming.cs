@@ -14,7 +14,7 @@ public class Swimming : Activity
 
     public override double GetSpeed()
     {
-        return Math.Round((GetDistance() / GetDuration()) / 60, 2);
+        return Math.Round((GetDistance() / GetDuration()) * 60, 2);
     }
 
     public override double GetPace()
