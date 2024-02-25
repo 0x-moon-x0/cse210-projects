@@ -1,6 +1,6 @@
 public class GoalManager
 {
-    private List<Goal> _goals;
+    private List<Goal> _goals = new List<Goal>();
     private int _score;
 
     public GoalManager()
@@ -200,8 +200,6 @@ public class GoalManager
 
     public void LoadGoals()
     {
-        List<Goal> goals = new List<Goal>();
-
         Console.WriteLine();
         Console.Write("Please enter filename (without file format): ");
         string filename = $"{Console.ReadLine()}.txt";
@@ -220,7 +218,7 @@ public class GoalManager
                 bool completion = Convert.ToBoolean(parts[4]);
 
                 SimpleGoal simple = new SimpleGoal(name, description, points);
-                goals.Add(simple);
+                _goals.Add(simple);
             }
 
             else if (parts[0] == "EternalGoal")
@@ -230,7 +228,7 @@ public class GoalManager
                 int points = int.Parse(parts[3]);
 
                 EternalGoal eternal = new EternalGoal(name, description, points);
-                goals.Add(eternal);
+                _goals.Add(eternal);
             }
 
             else if (parts[0] == "ChecklistGoal")
@@ -243,7 +241,7 @@ public class GoalManager
                 int completed = int.Parse(parts[6]);
 
                 ChecklistGoal checklist = new ChecklistGoal(name, description, points, target, bonus);
-                goals.Add(checklist);
+                _goals.Add(checklist);
             }
 
             else
